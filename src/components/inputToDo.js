@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class InputTodo extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       title: '',
@@ -13,12 +14,12 @@ class InputTodo extends Component {
       [e.target.name]: e.target.value,
     });
   };
-  
+
   handleSubmit = (e) => {
-      //const title = this.state;
+    const { title } = this.state;
     e.preventDefault();
-    if (this.state.title.trim()) {
-      this.props.addTodoProps(this.state.title);
+    if (title.trim()) {
+      this.props.addTodoProps(title);
       this.setState({
         title: '',
       });
@@ -41,7 +42,12 @@ class InputTodo extends Component {
         />
         <button type="submit" className="input-submit">Submit</button>
       </form>
-    )
+    );
   }
 }
+
+InputTodo.propTypes = {
+  addTodoProps: PropTypes.func.isRequired,
+};
+
 export default InputTodo;

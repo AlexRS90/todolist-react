@@ -30,7 +30,7 @@ class TodoContainer extends React.Component {
 
   handleChange = (id) => {
     this.setState((prevState) => ({
-      todos: this.state.todos.map(todo => {
+      todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
@@ -43,9 +43,10 @@ class TodoContainer extends React.Component {
   };
 
   delTodo = (id) => {
+    const { todos } = this.state;
     this.setState({
       todos: [
-        ...this.state.todos.filter(todo => {
+        ...todos.filter((todo) => {
           return todo.id !== id;
         })
       ]
@@ -53,13 +54,14 @@ class TodoContainer extends React.Component {
   };
 
   addTodoItem = (title) => {
+    const { todos } = this.state;
     const newTodo = {
       id: uuidv4(),
       title: title,
       completed: false
     };
     this.setState({
-      todos: [...this.state.todos, newTodo]
+      todos: [...todos, newTodo]
     });
   };
 
