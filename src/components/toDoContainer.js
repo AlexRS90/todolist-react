@@ -46,7 +46,7 @@ class TodoContainer extends React.Component {
     const { todos } = this.state;
     this.setState({
       todos: [
-        ...todos.filter((todo) => {// estlint-disable-line
+        ...todos.filter((todo) => { // estlint-disable-line
           return todo.id !== id;
         }),
       ],

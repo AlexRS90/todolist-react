@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TodoItem from './toDoItem';
 
-const TodosList = ({ todos, handleChangeProps, deleteTodoProps }) => {// estlint-disable-line
+const TodosList = ({ todos, handleChangeProps, deleteTodoProps }) => { // estlint-disable-line
   return (
     <ul>
       {todos.map((todo) => (
