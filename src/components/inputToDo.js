@@ -19,7 +19,8 @@ class InputTodo extends Component {
     const { title } = this.state;
     e.preventDefault();
     if (title.trim()) {
-      this.props.addTodoProps(title);
+      const { addTodoProps } = this.props;
+      addTodoProps(title);
       this.setState({
         title: '',
       });

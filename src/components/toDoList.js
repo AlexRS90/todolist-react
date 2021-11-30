@@ -1,8 +1,8 @@
 import React from 'react';
-import TodoItem from './toDoItem';
 import PropTypes from 'prop-types';
+import TodoItem from './toDoItem';
 
-const TodosList = ({ todos, handleChangeProps, deleteTodoProps }) => { 
+const TodosList = ({ todos, handleChangeProps, deleteTodoProps }) => {// estlint-disable-line
   return (
     <ul>
       {todos.map((todo) => (
@@ -15,7 +15,7 @@ const TodosList = ({ todos, handleChangeProps, deleteTodoProps }) => {
       ))}
     </ul>
   );
-}
+};
 
 TodosList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.object).isRequired,

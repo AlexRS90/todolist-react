@@ -35,7 +35,7 @@ class TodoContainer extends React.Component {
           return {
             ...todo,
             completed: !todo.completed,
-          }
+          };
         }
         return todo;
       }),
@@ -46,10 +46,10 @@ class TodoContainer extends React.Component {
     const { todos } = this.state;
     this.setState({
       todos: [
-        ...todos.filter((todo) => {
+        ...todos.filter((todo) => {// estlint-disable-line
           return todo.id !== id;
-        })
-      ]
+        }),
+      ],
     });
   };
 
@@ -57,24 +57,25 @@ class TodoContainer extends React.Component {
     const { todos } = this.state;
     const newTodo = {
       id: uuidv4(),
-      title: title,
-      completed: false
+      title,
+      completed: false,
     };
     this.setState({
-      todos: [...todos, newTodo]
+      todos: [...todos, newTodo],
     });
   };
 
   render() {
+    const { todos } = this.state;
     return (
       <div className="container">
         <div className="inner">
           <Header />
           <InputTodo
-          addTodoProps={this.addTodoItem}
+            addTodoProps={this.addTodoItem}
           />
           <TodosList
-            todos={this.state.todos}
+            todos={todos}
             handleChangeProps={this.handleChange}
             deleteTodoProps={this.delTodo}
           />

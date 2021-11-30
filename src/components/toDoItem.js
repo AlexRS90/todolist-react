@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './toDoItem.module.css';
 import PropTypes from 'prop-types';
+import styles from './toDoItem.module.css';
 
 const TodoItem = (props) => {
   const completedStyle = {
@@ -8,7 +8,7 @@ const TodoItem = (props) => {
     color: '#595959',
     opacity: '0.4',
     textDecoration: 'line-through',
-  }
+  };
   const { todo: { id, title, completed }, handleChangeProps, deleteTodoProps } = props;
   return (
     <li className={styles.item}>
@@ -25,8 +25,8 @@ const TodoItem = (props) => {
         {title}
       </span>
     </li>
-  )
-}
+  );
+};
 
 TodoItem.propTypes = {
   // addTodoProps: PropTypes.func.isRequired,
@@ -35,4 +35,4 @@ TodoItem.propTypes = {
   deleteTodoProps: PropTypes.func.isRequired,
 };
 
- export default TodoItem;
+export default TodoItem;
