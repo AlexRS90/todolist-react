@@ -2,9 +2,9 @@ import React from 'react';
 
 const Header = () => {
   const headerStyle = {
-    padding: "20px 0",
-    lineHeight: "1.5em",
-  }
+    padding: '20px 0',
+    lineHeight: '1.5em',
+  };
   return (
     <header style={headerStyle}>
       <h1
@@ -16,8 +16,8 @@ const Header = () => {
           color: '#ececec',
           textTransform: 'lowercase',
           textAlign: 'center',
-        }}
-      >todos</h1>
+        }}>
+      todos</h1>
     </header>
   );
 };
